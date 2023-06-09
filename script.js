@@ -28,15 +28,15 @@ function limesToCut(wedgesNeeded, limes) {
         limes[i] = 10;
         break;
     }
-    if (wedgesNeeded >= 0) {
+    if (wedgesNeeded > 0) {
       count++;
       wedgesNeeded -= limes[i];
-      if (wedgesNeeded - limes[i] < 0) {
-        break;
-      }
     }
+    if (wedgesNeeded === 0) return 0;
   }
   return count;
 }
 
-console.log(limesToCut(25, ["small", "small", "large", "medium", "small"]));
+console.log(limesToCut(0, ["small", "small", "large", "medium", "small"]));
+
+// 25 - 6 = 19, 19 - 6 = 13, 13 - 10 = 3,
